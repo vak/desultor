@@ -11,12 +11,23 @@ Use this mode when the target work directory is empty or intentionally new.
 
 Expected behavior:
 
-- populate the new project directly with the Desultor scaffold;
+- use the source repository as reference, but do not mirror it wholesale into
+  the new host project by default;
 - allow either Codex or Claude Code to perform the initial bootstrap;
 - treat the harness that performs the first substantive bootstrap pass as the
   initial primary harness unless ownership is explicitly handed off;
-- keep starter-owned reference docs under namespaced `desultor/` paths or an
-  equivalent separable marker;
+- default to a minimal host-project scaffold:
+  - adapted `AGENTS.md` and `CLAUDE.md`
+  - host-project `README.md`
+  - host-project `doc/ARCHITECTURE.md`
+  - host-project `doc/spec/intro.md`
+  - `doc/` layer skeleton and story workflow shape
+  - optional sidecar tooling only when actually wanted;
+- do not import starter-owned Desultor internals such as `doc/desultor/`,
+  `doc/spec/desultor/`, `doc/kb/desultor/`, `doc/rfc/desultor/`, or
+  `doc/stories/*/desultor/` into the new host project unless explicitly asked
+  to keep them as local reference material;
+- do not import `runtime/` into the new host project;
 - write target-project docs at host-project paths early instead of rewriting
   the starter namespace into project truth;
 - open the first active story rather than relying on chat residue.

@@ -51,6 +51,10 @@ exclude: doc/scratch/         # all modes
 The exact syntax is still open. The important point is that the contract needs
 first-class actions, not only path exclusion.
 
+For tabula-rasa bootstrap into a genuinely new host project, the default
+transport target should be a minimal host-oriented scaffold, not a full mirror
+of Desultor's own self-docs and internal history.
+
 ## Open design options
 
 ### Option A: exclude-list file

@@ -43,25 +43,54 @@ It is also meant to support three repository-level operations:
 
 ## Start a brand-new project
 
-If you want to use Desultor as the initial operating scaffold for a new
-repository, use this sequence:
+For humans, the normal path is not to copy this repository by hand.
 
-1. Create an empty repository or work directory.
-2. Copy in the Desultor scaffold:
-   - `doc/`
-   - `AGENTS.md`
-   - `CLAUDE.md`
-   - `scripts/`
-   - relevant `.gitignore` entries
-3. Open the new repository in either Codex or Claude Code and ask it to
-   perform the first substantive bootstrap pass. The starting harness becomes
-   the initial primary harness until an explicit handoff or external review
-   changes it.
-4. Write the host project's own root `README.md` early. Desultor's root
-   `README.md` explains the starter and should not become the host project's
-   main README.
-5. Follow the post-import checklist in
-   [Suggested first pass after import](#suggested-first-pass-after-import).
+Use this sequence instead:
+
+1. Create an empty repository or work directory for your real project.
+2. Open that directory in either Codex or Claude Code.
+3. Give the harness a bootstrap prompt such as:
+
+   ```text
+   Import Desultor from https://github.com/vak/desultor into this empty repository
+   as a minimal host-project scaffold.
+
+   Do not copy Desultor's own self-docs, RFCs, KB notes, or archived/backlog
+   stories into this project by default.
+
+   Adapt AGENTS.md and CLAUDE.md for this project, create the project's own
+   README.md, doc/ARCHITECTURE.md, doc/spec/intro.md, and open the first active
+   story.
+   ```
+
+4. Once the scaffold is in place, continue with the actual project request,
+   for example:
+
+   ```text
+   I want to build ...
+   ```
+
+Default bootstrap target for a new host project:
+
+- adapted `AGENTS.md` and `CLAUDE.md`
+- the host project's own `README.md`
+- the host project's own `doc/ARCHITECTURE.md`
+- the host project's own `doc/spec/intro.md`
+- the `doc/` layer skeleton and story workflow shape
+- optional `scripts/claude_sidecar.py` only if repo-local sidecar tooling is
+  actually wanted
+
+Not imported by default into a fresh host project:
+
+- `doc/desultor/`
+- `doc/spec/desultor/`
+- `doc/kb/desultor/`
+- `doc/rfc/desultor/`
+- `doc/stories/*/desultor/`
+- `runtime/`
+
+Desultor's own self-docs and internal history are reference material in this
+starter repository. They are not the default contents of your new project.
 
 If you are mixing into an existing repository instead of starting fresh, use
 the guided merge contract below rather than this bootstrap sequence.
@@ -72,8 +101,9 @@ If you copy Desultor into a real project, treat this repository as a reference
 implementation of the operating model, not as text to overwrite blindly.
 
 The expected operator for this step is an AI harness such as Codex or Claude
-Code. For a brand-new repository, use the bootstrap sequence above. For an
-existing repository, this is a guided merge, not a dumb file copy.
+Code. For a brand-new repository, use the bootstrap sequence above and adapt a
+minimal host-project scaffold instead of mirroring this repository wholesale.
+For an existing repository, this is a guided merge, not a dumb file copy.
 
 The host project's root `README.md` should stay the source of truth for that
 project's purpose, setup, and user-facing entry points. Desultor's root
@@ -91,8 +121,9 @@ At this point, the target project's own root `README.md` should already exist.
 
 1. Write or rewrite the target project's own `doc/ARCHITECTURE.md`.
 2. Write or rewrite the target project's own `doc/spec/intro.md`.
-3. Keep `doc/*/desultor/` and `doc/desultor/` as a detachable starter-owned
-   reference layer until you deliberately remove or replace it.
+3. If you deliberately imported any Desultor reference layer, keep
+   `doc/*/desultor/` and `doc/desultor/` detachable until you deliberately
+   remove or replace them.
 4. Keep or adapt the lifecycle rules in `doc/stories/README.md`.
 5. Confirm whether the starting harness stays primary or whether you want an
    explicit early handoff to the counterpart harness.

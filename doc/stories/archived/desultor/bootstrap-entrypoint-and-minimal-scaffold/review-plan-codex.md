@@ -1,0 +1,34 @@
+---
+kind: story
+created: 2026-04-15
+updated: 2026-04-15
+status: archived
+verification: local-evidence
+tags: [story, review, docs, bootstrap, import, scaffold, desultor]
+session_signature:
+  harness: codex
+  model_family: gpt-5
+  model_exact: not_exposed_in_session
+  reasoning_effort: not_exposed_in_session
+session_signature_sources:
+  harness:
+    source: direct_context
+    raw_evidence: "You are Codex, a coding agent based on GPT-5."
+  model_family:
+    source: direct_context
+    raw_evidence: "You are Codex, a coding agent based on GPT-5."
+  model_exact:
+    source: not_exposed_in_session
+    raw_evidence: not_exposed_in_session
+  reasoning_effort:
+    source: not_exposed_in_session
+    raw_evidence: not_exposed_in_session
+---
+# Plan Review
+
+- Scope is limited to bootstrap semantics and public guidance, not a full
+  transport-manifest implementation.
+- The key risk is over-correcting into a vague "just ask the harness" story.
+  The docs still need a concrete default scaffold boundary.
+- The second key risk is drift between the public README and the deeper spec /
+  KB / RFC layers, so the change must land in all of them in one pass.

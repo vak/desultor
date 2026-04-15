@@ -34,23 +34,41 @@ Use this note when adopting Desultor in any of its intended modes.
 - `guided mix-in into an existing repository`
 - `patch export from an existing Desultor-shaped project`
 
-## Copy
+## Default bootstrap surface for a brand-new host project
 
-- `doc/`
-- `AGENTS.md`
-- `CLAUDE.md`
-- `scripts/`
-- relevant `.gitignore` lines
+- adapted `AGENTS.md`
+- adapted `CLAUDE.md`
+- target repository `README.md`
+- target-project `doc/ARCHITECTURE.md`
+- target-project `doc/spec/intro.md`
+- `doc/` layer skeleton and story workflow shape
+- `scripts/claude_sidecar.py` only if repo-local sidecar tooling is actually
+  wanted
+
+## Do not import by default during tabula-rasa bootstrap
+
+- `doc/desultor/`
+- `doc/spec/desultor/`
+- `doc/kb/desultor/`
+- `doc/rfc/desultor/`
+- `doc/stories/*/desultor/`
+- `runtime/`
 
 ## Starter-owned namespace rule
 
-- keep Desultor's own notes and contracts under `doc/*/desultor/` and
-  `doc/desultor/` so they remain detachable after import;
+- if any Desultor reference layer is imported deliberately, keep its notes and
+  contracts under `doc/*/desultor/` and `doc/desultor/` so they remain
+  detachable after import;
 - do not blur those namespaced starter docs into the host project's own docs
   by default.
 
 ## Bootstrap entrypoint rule
 
+- for humans, the normal bootstrap path is:
+  - create an empty directory
+  - open it in Codex or Claude Code
+  - ask the harness to import Desultor from GitHub as a minimal host-project
+    scaffold;
 - a brand-new Desultor-shaped project may start from either Codex or Claude
   Code;
 - the harness that performs the first substantive bootstrap/import pass is the
@@ -70,8 +88,8 @@ Use this note when adopting Desultor in any of its intended modes.
 - whether the current starting harness remains primary by default;
 - when the counterpart harness is used as reviewer;
 - whether repo-local sidecar tooling is actually needed;
-- whether the imported `doc/*/desultor/` layer stays as a reference or is
-  removed after harvesting what is needed;
+- whether any Desultor reference layer should be imported deliberately at all,
+  instead of staying only in the source starter repository;
 - whether backlog placeholders should stay or be replaced.
 
 ## Mix-in guardrails
