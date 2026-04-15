@@ -1,12 +1,17 @@
 # desultor
 
-![Desultores, Pietro Santi Bartoli, 1691](https://upload.wikimedia.org/wikipedia/commons/9/9f/Desultores%2C_Pietro_Santi_Bartoli%2C_Antiche_Lucerne_Sepolcrali%2C_1691%2C_image_24.gif)
+<p align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Desultores%2C_Pietro_Santi_Bartoli%2C_Antiche_Lucerne_Sepolcrali%2C_1691%2C_image_24.gif" alt="Desultores, Pietro Santi Bartoli, 1691">
+</p>
 
 Desultor is a public-neutral starter for bootstrapping documented,
 lifecycle-tracked projects with Codex and Claude Code.
 
 Starter-owned documentation stays namespaced under `doc/*/desultor/` and
 `doc/desultor/` so it can be detached cleanly from a host project later.
+
+It works best as a two-harness loop: let one harness own the current writing
+or implementation pass, and use the counterpart harness for external review.
 
 ## 30-second start
 
@@ -25,6 +30,9 @@ Then, in the same session, continue with:
 
 That is the normal human entrypoint. The exact bootstrap contract lives in
 [INSTALL.md](INSTALL.md).
+
+Recommended working mode: keep one primary harness for the current pass, and
+bring in the other harness early as the external reviewer.
 
 ## What it gives you
 
