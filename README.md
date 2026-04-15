@@ -20,6 +20,23 @@ It is also meant to support three repository-level operations:
    handled by an AI harness rather than by blind overwrite;
 3. export a reusable patch from an existing Desultor-shaped project.
 
+## 30-second start
+
+For a brand-new project:
+
+1. create an empty directory or repository;
+2. open it in Codex or Claude Code;
+3. paste this:
+
+   ```text
+   Import Desultor from github.com/vak/desultor as a minimal scaffold for this
+   project. Keep host-project docs and workflow, not Desultor self-docs or
+   history. Then help me build: ...
+   ```
+
+That is the normal human entrypoint. The longer bootstrap notes below only make
+the default boundary explicit.
+
 ## What it gives you
 
 - a `doc/` taxonomy that separates stable contracts, reusable findings, open
@@ -52,15 +69,9 @@ Use this sequence instead:
 3. Give the harness a bootstrap prompt such as:
 
    ```text
-   Import Desultor from https://github.com/vak/desultor into this empty repository
-   as a minimal host-project scaffold.
-
-   Do not copy Desultor's own self-docs, RFCs, KB notes, or archived/backlog
-   stories into this project by default.
-
-   Adapt AGENTS.md and CLAUDE.md for this project, create the project's own
-   README.md, doc/ARCHITECTURE.md, doc/spec/intro.md, and open the first active
-   story.
+   Import Desultor from github.com/vak/desultor as a minimal scaffold for this
+   project. Keep host-project docs and workflow, not Desultor self-docs or
+   history.
    ```
 
 4. Once the scaffold is in place, continue with the actual project request,
