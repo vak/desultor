@@ -1,41 +1,30 @@
 # desultor
 
-Desultor is a public-neutral project starter for teams that want a disciplined
-docs layout, an explicit work lifecycle, and a practical Codex/Claude Code
-operating model before a serious harness orchestrator exists.
+![Desultores, Pietro Santi Bartoli, 1691](https://upload.wikimedia.org/wikipedia/commons/9/9f/Desultores%2C_Pietro_Santi_Bartoli%2C_Antiche_Lucerne_Sepolcrali%2C_1691%2C_image_24.gif)
 
-Starter-owned documentation is namespaced under `doc/*/desultor/` and
-`doc/desultor/` so it remains separable from host-project documentation after
-import.
+Desultor is a public-neutral starter for bootstrapping documented,
+lifecycle-tracked projects with Codex and Claude Code.
 
-It is intentionally a stopgap. The point is not to pretend that markdown files
-and a few scripts are a real orchestration system. The point is to make project
-state, review boundaries, and cross-harness work less sloppy until something
-better replaces them.
-
-It is also meant to support three repository-level operations:
-
-1. bootstrap into a tabula-rasa work directory;
-2. mix into an existing repository where collisions are expected and must be
-   handled by an AI harness rather than by blind overwrite;
-3. export a reusable patch from an existing Desultor-shaped project.
+Starter-owned documentation stays namespaced under `doc/*/desultor/` and
+`doc/desultor/` so it can be detached cleanly from a host project later.
 
 ## 30-second start
 
-For a brand-new project:
-
-1. create an empty directory or repository;
-2. open it in Codex or Claude Code;
-3. paste this:
+For a brand-new project, in an empty directory or repository opened in Codex
+or Claude Code, paste:
 
    ```text
-   Import Desultor from github.com/vak/desultor as a minimal scaffold for this
-   project. Keep host-project docs and workflow, not Desultor self-docs or
-   history. Then help me build: ...
+   Import Desultor according to github.com/vak/desultor/INSTALL.md
    ```
 
-That is the normal human entrypoint. The longer bootstrap notes below only make
-the default boundary explicit.
+Then, in the same session, continue with:
+
+   ```text
+   Then help me build: ...
+   ```
+
+That is the normal human entrypoint. The exact bootstrap contract lives in
+[INSTALL.md](INSTALL.md).
 
 ## What it gives you
 
@@ -58,50 +47,30 @@ the default boundary explicit.
 - not a promise that Codex and Claude Code behave identically;
 - not the final orchestrator.
 
-## Start a brand-new project
+## Operating scope
+
+Desultor is intentionally a stopgap. The goal is not to pretend that markdown
+files and a few scripts are a real orchestration system. The goal is to make
+project state, review boundaries, and cross-harness work less sloppy until
+something better replaces them.
+
+It is meant to support three repository-level operations:
+
+1. bootstrap into a tabula-rasa work directory;
+2. mix into an existing repository where collisions are expected and must be
+   handled by an AI harness rather than by blind overwrite;
+3. export a reusable patch from an existing Desultor-shaped project.
+
+## Fresh-project boundary
 
 For humans, the normal path is not to copy this repository by hand.
 
-Use this sequence instead:
+Use the short entrypoint above and treat [INSTALL.md](INSTALL.md) as the
+canonical bootstrap contract.
 
-1. Create an empty repository or work directory for your real project.
-2. Open that directory in either Codex or Claude Code.
-3. Give the harness a bootstrap prompt such as:
-
-   ```text
-   Import Desultor from github.com/vak/desultor as a minimal scaffold for this
-   project. Keep host-project docs and workflow, not Desultor self-docs or
-   history.
-   ```
-
-4. Once the scaffold is in place, continue with the actual project request,
-   for example:
-
-   ```text
-   I want to build ...
-   ```
-
-Default bootstrap target for a new host project:
-
-- adapted `AGENTS.md` and `CLAUDE.md`
-- the host project's own `README.md`
-- the host project's own `doc/ARCHITECTURE.md`
-- the host project's own `doc/spec/intro.md`
-- the `doc/` layer skeleton and story workflow shape
-- optional `scripts/claude_sidecar.py` only if repo-local sidecar tooling is
-  actually wanted
-
-Not imported by default into a fresh host project:
-
-- `doc/desultor/`
-- `doc/spec/desultor/`
-- `doc/kb/desultor/`
-- `doc/rfc/desultor/`
-- `doc/stories/*/desultor/`
-- `runtime/`
-
-Desultor's own self-docs and internal history are reference material in this
-starter repository. They are not the default contents of your new project.
+For a fresh host project, the default expectation is a minimal scaffold, not a
+mirror of this repository. Desultor's self-docs, internal history, and
+starter-owned reference layers stay out unless you explicitly ask for them.
 
 If you are mixing into an existing repository instead of starting fresh, use
 the guided merge contract below rather than this bootstrap sequence.
@@ -142,6 +111,7 @@ At this point, the target project's own root `README.md` should already exist.
 
 ## Repository map
 
+- [INSTALL.md](INSTALL.md) - canonical bootstrap contract for fresh projects
 - [AGENTS.md](AGENTS.md) - Codex-facing project rules
 - [CLAUDE.md](CLAUDE.md) - Claude Code-facing project
   rules
