@@ -53,13 +53,16 @@ CLI output, not terminal screenshots.
 
 Keep these concepts separate:
 
+- `requested_model`
+- `configured_default_model`
+- `effective_session_model`
 - `requested_effort`
 - `requested_permission_mode`
 - `configured_default_effort`
 - `effective_session_effort`
 
 Only claim what is honestly observable. If the runtime does not expose the
-effective session effort or permission mode, do not invent it.
+effective session model, effort, or permission mode, do not invent it.
 
 ## Permission-mode discipline
 
@@ -79,8 +82,8 @@ Do not invent a remaining-percent number from partial metadata.
 ## Minimal workflow
 
 1. Start or resume a single Claude session via stored `session_id`.
-2. Pass explicit effort or permission mode only when the task actually needs
-   it.
+2. Pass explicit model, effort, or permission mode only when the task actually
+   needs it.
 3. Persist envelopes and normalized state after every call.
 4. Use `tmux` only as a companion view, not as the source of continuity.
 5. If context quality degrades, generate a handoff note and start a fresh

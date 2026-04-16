@@ -45,7 +45,8 @@ bring in the other harness early as the external reviewer.
 - starter instructions for both Codex (`AGENTS.md`) and Claude Code
   (`CLAUDE.md`);
 - a lightweight repo-local Claude sidecar controller in
-  `scripts/claude_sidecar.py`;
+  `scripts/claude_sidecar.py`, including transcript tail, interactive resume,
+  and visible one-shot `tmux` review launch paths;
 - backlog placeholders for Desultor's own next development steps.
 
 ## What it is not

@@ -87,19 +87,34 @@ time, or record an explicit issue and defer honestly.
 
 ### Example shape
 
+When live visibility matters, prefer the observable `tmux-ask` path:
+
 ```bash
-python3 scripts/claude_sidecar.py ask --new-session --effort medium \
+python3 scripts/claude_sidecar.py tmux-ask --new-session --effort low \
+  --model sonnet \
   --label external-plan-review \
+  --assistant-output-contract markdown-heading \
   --assistant-output doc/stories/active/<story>/review-external-plan-claude-code.md \
   "<review prompt for a serious-story plan with exact files, scope, and artifact contract>"
 ```
 
 ```bash
-python3 scripts/claude_sidecar.py ask --new-session --effort medium \
+python3 scripts/claude_sidecar.py tmux-ask --new-session --effort low \
+  --model sonnet \
   --label external-review \
+  --assistant-output-contract markdown-heading \
   --assistant-output doc/stories/active/<story>/review-external-claude-code.md \
   "<review prompt with exact files, scope, and artifact contract>"
 ```
+
+For unattended or non-visible one-shot asks, `ask` still exists, but review
+artifact writing should use the same `--assistant-output-contract
+markdown-heading` guard.
+
+If the primary reason for using the counterpart harness is an expensive,
+multi-turn story-scope review on `opus/high`, keeping one long-lived Claude
+session per active story is an acceptable cost-control choice rather than a
+process smell by itself.
 
 ## Mode B: ownership handoff
 
