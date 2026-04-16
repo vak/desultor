@@ -62,3 +62,12 @@ See
 `doc/rfc/desultor/blocking-issue-preemption-and-budget-safe-counterpart-review.md`
 for the still-open policy question about how aggressive counterpart external
 review should be when Claude Code budget is constrained.
+
+During the immediate cleanup pass, the safer temporary workaround was:
+
+- do not run counterpart reviews in parallel when budget pressure is visible;
+- avoid trusting `--assistant-output` as a final artifact path unless the
+  result is validated first;
+- recover a review artifact from sidecar raw output only when a real final
+  artifact is present there, otherwise keep the story open and ask for a clean
+  rerun.

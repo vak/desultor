@@ -30,6 +30,7 @@ being driven by multiple AI harnesses and need explicit operational discipline.
 - Active stories require the full trail:
   - `plan.md`
   - `review-plan-*`
+  - for serious stories: `review-external-plan-*`
   - implementation pass
   - `review-implementation-*`
   - external `review-external-*`

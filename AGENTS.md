@@ -65,6 +65,8 @@ orchestrator exists.
 - Active stories require `plan.md`.
 - Blocking or urgent issues may activate a story directly.
 - Plan review comes before implementation.
+- Serious stories require external `review-external-plan-*` from the
+  counterpart harness before the implementation pass.
 - Implementation review comes before closure.
 - External `review-external-*` from the counterpart harness comes before final
   closure.

@@ -2,7 +2,7 @@
 kind: story-note
 created: 2026-04-16
 updated: 2026-04-16
-status: draft
+status: archived
 verification: local-evidence
 tags: [story, notes, docs, taxonomy, inventory, desultor]
 session_signature:

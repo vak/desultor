@@ -2,7 +2,7 @@
 kind: story
 created: 2026-04-16
 updated: 2026-04-16
-status: active
+status: archived
 verification: local-evidence
 tags: [story, review, plan, lifecycle, external-review, risk, desultor]
 session_signature:
