@@ -44,6 +44,7 @@ orchestrator exists.
 ### Documentation discipline
 
 - `doc/inbox/` holds untriaged incoming material.
+- `doc/issues/` holds explicit blocking or urgent problems.
 - `doc/spec/` holds stable contracts.
 - `doc/kb/` holds reusable findings and operational notes.
 - `doc/rfc/` holds open design questions and broad seeds.
@@ -53,12 +54,16 @@ orchestrator exists.
   or `doc/desultor/` so it remains detachable after import into a host repo.
 - material in `doc/inbox/` should be triaged into `spec/`, `kb/`, `rfc/`,
   `stories/`, or `scratch/` instead of accumulating there indefinitely.
+- blocking or urgent issues should be written down explicitly and may start a
+  story directly with elevated priority instead of waiting in normal backlog
+  order.
 - If semantics change, update documentation in the same pass.
 - If work is larger than a small local edit, create or update a story.
 
 ### Story lifecycle
 
 - Active stories require `plan.md`.
+- Blocking or urgent issues may activate a story directly.
 - Plan review comes before implementation.
 - Implementation review comes before closure.
 - External `review-external-*` from the counterpart harness comes before final

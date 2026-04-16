@@ -1,7 +1,7 @@
 ---
 kind: kb
 created: 2026-04-15
-updated: 2026-04-15
+updated: 2026-04-16
 status: stable
 verification: project-rule
 tags: [workflow, cross-harness, codex, claude-code, review, handoff, sop]
@@ -49,13 +49,34 @@ or an explicit handoff artifact.
 
 Use this mode when:
 
-- the main plan and implementation already happened in one harness;
+- the main authoring stays in one harness;
 - you want an independent review pass from the counterpart harness;
 - the source of truth stays in the current repository state.
 
-### Minimal procedure
+For serious stories, this mode may happen twice:
 
-1. Finish the local story pass first.
+- once on the plan before implementation;
+- once after implementation before closure.
+
+Under constrained counterpart-review budget, do not launch multiple speculative
+external reviews just to clear `active/`. Prefer one tightly scoped review at a
+time, or record an explicit issue and defer honestly.
+
+### Plan-stage procedure for serious stories
+
+1. Finish the local `plan.md` and `review-plan-*.md` pass first.
+2. Narrow the review scope:
+   - exact files
+   - why the story is serious
+   - the current plan
+   - expected output artifact path
+3. Ask the counterpart harness for review of the plan, not for implementation.
+4. Save the result as `review-external-plan-*.md`.
+5. Process findings back in the primary harness before implementation.
+
+### Post-implementation procedure
+
+1. Finish the local implementation and `review-implementation-*.md` pass first.
 2. Narrow the review scope:
    - exact files
    - what changed
@@ -65,6 +86,13 @@ Use this mode when:
 5. Process findings back in the primary harness.
 
 ### Example shape
+
+```bash
+python3 scripts/claude_sidecar.py ask --new-session --effort medium \
+  --label external-plan-review \
+  --assistant-output doc/stories/active/<story>/review-external-plan-claude-code.md \
+  "<review prompt for a serious-story plan with exact files, scope, and artifact contract>"
+```
 
 ```bash
 python3 scripts/claude_sidecar.py ask --new-session --effort medium \

@@ -37,7 +37,7 @@ bring in the other harness early as the external reviewer.
 ## What it gives you
 
 - a `doc/` taxonomy that separates stable contracts, reusable findings, open
-  design questions, and lifecycle-tracked work;
+  design questions, blocking issues, and lifecycle-tracked work;
 - starter-owned reference docs kept under `desultor`-namespaced paths so they
   can be removed from a host project cleanly later;
 - a story workflow that forces plan, review, implementation, and external
@@ -126,8 +126,14 @@ At this point, the target project's own root `README.md` should already exist.
 - [doc/README.md](doc/README.md) - documentation map
 - [doc/desultor/ARCHITECTURE.md](doc/desultor/ARCHITECTURE.md) -
   architecture of the starter itself
+- [doc/spec/desultor/doc-taxonomy-v0_1.md](doc/spec/desultor/doc-taxonomy-v0_1.md)
+  - canonical structure and semantics of the `doc/` tree
 - [doc/spec/desultor/intro.md](doc/spec/desultor/intro.md) - starter
   intent and operating stance
+- [doc/spec/desultor/issues-and-incident-handling-v0_1.md](doc/spec/desultor/issues-and-incident-handling-v0_1.md)
+  - blocking-issue and incident-handling contract
+- [doc/spec/desultor/inbox-triage-and-parking-v0_1.md](doc/spec/desultor/inbox-triage-and-parking-v0_1.md)
+  - intake-drain and backlog-as-parking contract
 - [doc/spec/desultor/project-lifecycle-v0_1.md](doc/spec/desultor/project-lifecycle-v0_1.md)
   - lifecycle contract
 - [doc/spec/desultor/operation-modes-v0_1.md](doc/spec/desultor/operation-modes-v0_1.md)
@@ -138,6 +144,7 @@ At this point, the target project's own root `README.md` should already exist.
   - authored-artifact provenance rules
 - [doc/kb/desultor/cross-harness-codex-claude-workflow-2026-04-15.md](doc/kb/desultor/cross-harness-codex-claude-workflow-2026-04-15.md)
   - review vs handoff workflow
+- [doc/issues/](doc/issues/) - blocking and urgent issue tracking
 - [doc/stories/](doc/stories/) - lifecycle-tracked
   work
 - [scripts/claude_sidecar.py](scripts/claude_sidecar.py)

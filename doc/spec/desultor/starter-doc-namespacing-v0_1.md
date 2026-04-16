@@ -10,6 +10,7 @@ separable from the documentation of a host project that imports it.
 Starter-owned documents should live under explicit `desultor` namespaces:
 
 - `doc/desultor/` for starter self-docs outside the layer buckets;
+- `doc/issues/desultor/` for starter issues;
 - `doc/spec/desultor/` for starter contracts;
 - `doc/kb/desultor/` for starter operational notes;
 - `doc/rfc/desultor/` for starter design questions;
@@ -20,7 +21,7 @@ Starter-owned documents should live under explicit `desultor` namespaces:
 When Desultor is imported into a host project:
 
 - host-project docs should use the non-namespaced paths such as
-  `doc/ARCHITECTURE.md`, `doc/spec/intro.md`, and host-owned KB/RFC/story
+  `doc/ARCHITECTURE.md`, `doc/spec/intro.md`, and host-owned KB/RFC/story/issue
   paths;
 - the imported `desultor` namespaces should stay detachable until the host
   project deliberately removes or replaces them;
@@ -38,6 +39,6 @@ This naming discipline reduces three common failure modes:
 
 ## Allowed exceptions
 
-Generic layer indexes such as `doc/README.md`, `doc/spec/README.md`, and
-`doc/kb/README.md` may remain non-namespaced because their job is to explain
-the shared taxonomy itself.
+Generic layer indexes such as `doc/README.md`, `doc/spec/README.md`,
+`doc/kb/README.md`, and `doc/issues/README.md` may remain non-namespaced
+because their job is to explain the shared taxonomy itself.

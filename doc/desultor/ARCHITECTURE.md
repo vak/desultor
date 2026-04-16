@@ -18,8 +18,10 @@ Desultor is intentionally lightweight and docs-first:
    - default public-neutral stance
 2. `Starter self-documentation layer`
    - `doc/desultor/` for starter-owned docs outside the layered buckets
-   - `doc/*/desultor/` for starter-owned notes, specs, RFCs, and stories
+   - `doc/*/desultor/` for starter-owned issues, notes, specs, RFCs, and
+     stories
 3. `Documentation layer`
+   - explicit blocking issues in `doc/issues/`
    - stable contracts in `doc/spec/`
    - reusable notes in `doc/kb/`
    - open questions in `doc/rfc/`
@@ -36,6 +38,7 @@ Desultor is intentionally lightweight and docs-first:
   namespaces inside `doc/`.
 - The root README of an imported target project remains project-specific.
 - Stable contracts, findings, and open debates do not collapse into one bucket.
+- Blocking incidents become explicit issue artifacts instead of chat residue.
 - Cross-harness review remains explicit instead of being implied by chat
   history.
 - Runtime state is local and disposable; durable meaning lives in tracked

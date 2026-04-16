@@ -13,7 +13,10 @@ If the repository is also a reusable starter, keep starter-owned contracts in
 
 Current starter specs:
 
+- `desultor/doc-taxonomy-v0_1.md`
 - `desultor/intro.md`
+- `desultor/issues-and-incident-handling-v0_1.md`
+- `desultor/inbox-triage-and-parking-v0_1.md`
 - `desultor/starter-doc-namespacing-v0_1.md`
 - `desultor/public-neutrality-v0_1.md`
 - `desultor/project-lifecycle-v0_1.md`

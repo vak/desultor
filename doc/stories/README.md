@@ -10,6 +10,9 @@ State buckets may contain namespaced subtrees such as `active/desultor/` when a
 reusable starter or scaffold needs to keep its own work clearly separable from
 host-project work.
 
+Blocking or urgent issues may activate a story directly from `doc/issues/`,
+potentially in `active/` and at higher priority than normal backlog sequencing.
+
 ## Story shape
 
 When a story is only a backlog placeholder, it may start with:
@@ -21,6 +24,7 @@ Once a story becomes active, the expected authored trail is:
 
 - `plan.md`
 - `review-plan-*.md`
+- for serious stories: `review-external-plan-*.md`
 - `review-implementation-*.md`
 - `review-external-*.md`
 - optional `notes-*.md`
@@ -30,12 +34,17 @@ Once a story becomes active, the expected authored trail is:
 1. write `plan.md`
 2. review the plan
 3. rework until the plan is good enough
-4. run the implementation pass
-5. review the implementation
-6. fix findings
-7. repeat until local closure is honest
-8. obtain external review from the counterpart harness
-9. process external findings before closure
+4. for serious stories, obtain external plan review from the counterpart
+   harness before implementation
+5. run the implementation pass
+6. review the implementation
+7. fix findings
+8. repeat until local closure is honest
+9. obtain external review from the counterpart harness
+10. process external findings before closure
+
+See `doc/spec/desultor/project-lifecycle-v0_1.md` for the serious-story gate
+and the criteria for when `review-external-plan-*.md` is required.
 
 ## Authored artifact provenance
 
